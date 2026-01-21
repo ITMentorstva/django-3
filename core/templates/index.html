@@ -1,1 +1,12 @@
-<p>This is my index.html</p>
+
+<div>
+
+    {% for name, product in products.items %}
+        <div>
+            <p>{{ name }}</p>
+            <small>{{ product.description }}</small>
+            <p>${{ product.price }}</p>
+        </div>
+    {% endfor %}
+
+</div>
