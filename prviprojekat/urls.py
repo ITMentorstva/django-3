@@ -20,6 +20,8 @@ from core.views import home
 from core.views import about
 from core.views import product
 from core.views import user
+from core.views import create_product
+from core.views import save_product
 
 # 127.0.0.1:8000 -> ""
 # KupujemProdajem.com -> ""
@@ -29,5 +31,11 @@ urlpatterns = [
     path('', home),
     path('about', about),
     path('proizvod/<str:name>', product),
-    path('korisnik/<int:userId>', user)
+    path('korisnik/<int:userId>', user),
+
+    # GET -> Prikazujemo HTML formu
+    path('admin/proizvod/create', create_product),
+
+    # POST -> Cuvamo proizvod u bazi
+    path('admin/proizvod/save', save_product)
 ]
